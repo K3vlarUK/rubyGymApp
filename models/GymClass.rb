@@ -33,12 +33,6 @@ class GymClass
     SqlRunner.run(sql, values)
   end
 
-  def delete()
-    sql = "DELETE FROM gymclasses WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
   ## Class Methods
 
   def self.map_items(gym_class_data)

@@ -33,12 +33,6 @@ class Member
     SqlRunner.run(sql, values)
   end
 
-  def delete()
-    sql = "DELETE FROM members WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
   ## Ease of Use
 
   def merge_name()
@@ -64,6 +58,12 @@ class Member
     member = SqlRunner.run(sql, values)
     result = Member.new(member.first)
     return result
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM members WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
 end

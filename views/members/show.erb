@@ -3,3 +3,6 @@
 <p> Last Name: <%= @member.last_name %>  </p>
 <p> Premium Membership Status: <%= @member.premium_member() %> </p>
 <a href="/members/<%= @member.id %>/edit">Update Member</a>
+<form action="/members/<%= @member.id %>/delete" method="post">
+  <input type="submit" value="Delete Member">
+</form>
