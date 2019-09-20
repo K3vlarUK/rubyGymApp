@@ -1,6 +1,7 @@
 <h1>All Gym Members</h1>
 <a href="/members/new">Add Member</a>
 <% @members.each do |member| %>
+<p> Member ID: <%= member.id %></p>
 <p> Name: <%= member.merge_name() %>  </p>
 <p> Premium Membership: <%= member.premium_member() %> </p>
 <a href="/members/<%= member.id %>">View Member</a>

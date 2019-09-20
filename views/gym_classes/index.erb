@@ -1,9 +1,11 @@
 <h1>All Gym Classes</h1>
 <a href="/classes/new">Add New Class</a>
 <% @gym_classes.each do |gym_class| %>
+<p> Class ID: <%= gym_class.id %></p>
 <p> Class Name: <%= gym_class.name() %> </p>
 <p> Start time: <%= gym_class.start_time() %> </p>
 <p> Capacity: <%= gym_class.capacity() %></p>
+<a href="/bookings/new">Book member to class</a>
 <form action="/classes/<%= gym_class.id() %>/delete" method="post">
   <input type="submit" value="Delete Class">
 </form>

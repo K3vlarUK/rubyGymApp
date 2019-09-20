@@ -1,0 +1,20 @@
+<h2>Book member into a class</h2>
+<form action="/bookings" method="post">
+  <label>Member to book in: </label>
+  <select name="member_id">
+    <% @members.each do |member| %>
+    <option value="<%= member.id %>">
+      <%= member.merge_name() %>
+    </option>
+    <% end %>
+  </select>
+  <label>Class to book into: </label>
+  <select name="gym_class_id">
+    <% @gym_classes.each do |gym_class| %>
+    <option value="<%= gym_class.id %>">
+      <%= gym_class.name() %>
+    </option>
+    <% end %>
+  </select>
+  <input type="submit" value="Book Member">
+</form>
