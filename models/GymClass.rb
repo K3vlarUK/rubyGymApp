@@ -34,14 +34,14 @@ class GymClass
   end
 
   def delete()
-    sql = "DELETE * FROM gymclasses WHERE id = $1"
+    sql = "DELETE FROM gymclasses WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   ## Class Methods
 
-  def self.map_items(gymclass_data)
+  def self.map_items(gym_class_data)
     return gym_class_data.map { |gym_class| GymClass.new(gym_class) }
   end
 
@@ -50,6 +50,20 @@ class GymClass
     gym_class_data = SqlRunner.run(sql)
     gym_classes = map_items(gym_class_data)
     return gym_classes
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM gymclasses WHERE id = $1"
+    values = [id]
+    gym_class = SqlRunner.run(sql, values)
+    result = GymClass.new(gym_class.first)
+    return result
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM gymclasses WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
 end

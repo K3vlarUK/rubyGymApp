@@ -1,0 +1,12 @@
+<form action="/members/ <%= @member.id %> " method="post">
+  <label for="first-name">First Name: </label>
+  <input type="text" name="first_name" id="first-name" value="<%= @member.first_name %>">
+  <label for="last-name">Last Name: </label>
+  <input type="text" name="last_name" id="last-name" value="<%= @member.last_name %>">
+  <label for="premium-member">Premium Membership: </label>
+  <select name="premium_member" id="premium-member">
+    <option value="true" <%= @member.premium_member == "t" ? "selected" : nil %>>True</option>
+    <option value="false" <%= @member.premium_member == "f" ? "selected" : nil %>>False</option>
+  </select>
+  <input type="submit" value="Add Member">
+</form>
