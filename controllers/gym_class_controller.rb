@@ -8,13 +8,13 @@ get '/classes' do
   erb (:"gym_classes/index")
 end
 
-# get '/classes/:id' do
-#   @gym_class = GymClass.find(params[:id])
-#   erb (:"gym_classes/show")
-# end
-
 get '/classes/new' do
   erb (:"gym_classes/new")
+end
+
+get '/classes/:id' do
+  @gym_class = GymClass.find(params[:id])
+  erb (:"gym_classes/show")
 end
 
 post '/classes' do
