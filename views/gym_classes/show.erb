@@ -1,0 +1,7 @@
+<h2>Details for Class: <%= @gym_class.name %></h2>
+<p>Start Time: <%= @gym_class.start_time %></p>
+<p>Capacity: <%= @gym_class.capacity %></p>
+<p>Attending Members: </p>
+<% for member in @gym_class.members %>
+<li><%= member.merge_name() %></li>
+<% end %>

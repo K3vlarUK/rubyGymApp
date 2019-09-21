@@ -6,6 +6,7 @@
 <p> Start time: <%= gym_class.start_time() %> </p>
 <p> Capacity: <%= gym_class.capacity() %></p>
 <a href="/bookings/new">Book member to class</a>
+<a href="/classes/<%= gym_class.id %>">View Class Details</a>
 <form action="/classes/<%= gym_class.id() %>/delete" method="post">
   <input type="submit" value="Delete Class">
 </form>
