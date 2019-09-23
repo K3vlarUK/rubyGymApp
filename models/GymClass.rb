@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class GymClass
 
-  attr_accessor :name, :start_time, :capacity
+  attr_accessor :name, :start_time, :capacity, :attendees
   attr_reader :id
 
   def initialize(options)
@@ -10,6 +10,7 @@ class GymClass
     @name = options['name']
     @start_time = options['start_time']
     @capacity = options['capacity'].to_i
+    @attendees = 0
   end
 
   ## CRUD functionality

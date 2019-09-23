@@ -1,9 +1,21 @@
-<h1>All Gym Members</h1>
+<hr/>
 <a href="/members/new">Add Member</a>
-<% @members.each do |member| %>
-<p> Member ID: <%= member.id %></p>
-<p> Name: <%= member.merge_name() %>  </p>
-<p> Premium Membership: <%= member.premium_member() %> </p>
-<a href="/members/<%= member.id %>">View Member</a>
-<hr />
-<% end %>
+<table>
+  <thead>
+    <h3>All Gym Members</h3>
+  </thead>
+  <tr>
+    <th>Member ID</th>
+    <th>Name</th>
+    <th>Premium Membership</th>
+    <th>View Member</th>
+  </tr>
+  <% @members.each do |member| %>
+  <tr>
+    <td><%= member.id %></td>
+    <td><%= member.merge_name() %></td>
+    <td><%= member.premium_member() %></td>
+    <td><a href="/members/<%= member.id %>">View</a></td>
+  </tr>
+  <% end %>
+</table>

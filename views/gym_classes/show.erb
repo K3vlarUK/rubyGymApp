@@ -1,7 +1,26 @@
+<hr/>
+<form action="/classes/<%= @gym_class.id() %>/delete" method="post">
+  <input type="submit" value="Delete Class">
+</form>
 <h2>Details for Class: <%= @gym_class.name %></h2>
 <p>Start Time: <%= @gym_class.start_time %></p>
 <p>Capacity: <%= @gym_class.capacity %></p>
-<p>Attending Members: </p>
-<% for member in @gym_class.members %>
-<li><%= member.merge_name() %></li>
-<% end %>
+<table>
+  <tr>
+    <thead>
+      <h3>Attending Members</h3>
+    </thead>
+  </tr>
+  <tr>
+    <th>Member</th>
+    <th>Cancel Booking</th>
+  </tr>
+  <% for member in @gym_class.members %>
+  <tr>
+    <td><%= member.merge_name() %></td>
+    <td>
+      Place Holder for Delete
+    </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,14 +1,27 @@
-<h1>All Gym Classes</h1>
+<hr/>
 <a href="/classes/new">Add New Class</a>
-<% @gym_classes.each do |gym_class| %>
-<p> Class ID: <%= gym_class.id %></p>
-<p> Class Name: <%= gym_class.name() %> </p>
-<p> Start time: <%= gym_class.start_time() %> </p>
-<p> Capacity: <%= gym_class.capacity() %></p>
-<a href="/bookings/new">Book member to class</a>
-<a href="/classes/<%= gym_class.id %>">View Class Details</a>
-<form action="/classes/<%= gym_class.id() %>/delete" method="post">
-  <input type="submit" value="Delete Class">
-</form>
-<hr />
-<% end %>
+<table>
+  <thead>
+    <h3>All Gym Classes</h3>
+  </thead>
+  <tr>
+    <th>Class Name</th>
+    <th>Start Time</th>
+    <th>Capacity</th>
+    <th>Reserve</th>
+    <th>Details</th>
+  </tr>
+  <% @gym_classes.each do |gym_class| %>
+  <tr>
+    <td><%= gym_class.name() %></td>
+    <td><%= gym_class.start_time() %></td>
+    <td><%= gym_class.members().length() %> / <%= gym_class.capacity() %></td>
+    <% if gym_class.members().length() < gym_class.capacity() %>
+    <td><a href="/bookings/new">Reserve</a></td>
+    <% else %>
+    <td>Class Full</td>
+    <% end %>
+    <td><a href="/classes/<%= gym_class.id %>">Full Details</a></td>
+  </tr>
+  <% end %>
+</table>
