@@ -52,6 +52,7 @@ class GymClass
     end
   end
 
+
   ## Class Methods
 
   def self.map_items(gym_class_data)

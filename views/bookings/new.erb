@@ -10,13 +10,9 @@
   </select>
   <label>Class to book into: </label>
   <select name="gym_class_id">
-    <% @gym_classes.each do |gym_class| %>
-      <% if !gym_class.is_full?() %>
-      <option value="<%= gym_class.id %>">
-        <%= gym_class.name() %>
-      </option>
-      <% end %>
-    <% end %>
+    <option value="<%= @gym_class.id %>">
+      <%= @gym_class.name %>
+    </option>
   </select>
   <input type="submit" value="Book Member">
 </form>

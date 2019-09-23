@@ -59,9 +59,9 @@ class Booking
     return result
   end
 
-  def self.delete(id)
-    sql = "DELETE FROM bookings WHERE id = $1"
-    values = [id]
+  def self.delete(member_id, gym_class_id)
+    sql = "DELETE FROM bookings WHERE member_id = $1 AND gym_class_id = $2"
+    values = [member_id, gym_class_id]
     SqlRunner.run(sql, values)
   end
 

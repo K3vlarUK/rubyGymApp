@@ -19,7 +19,9 @@
   <tr>
     <td><%= member.merge_name() %></td>
     <td>
-      Place Holder for Delete
+      <form action="/bookings/<%= member.id %>/<%= @gym_class.id %>/delete" method="post">
+        <input type="submit" value="Cancel Booking">
+      </form>
     </td>
   </tr>
   <% end %>
