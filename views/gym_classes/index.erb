@@ -19,9 +19,13 @@
     <td>
       <a href="/classes/<%= gym_class.id %>">Full Details</a>
     </td>
+    <% if !gym_class.is_full?() %>
     <td>
       <a href="/bookings/<%= gym_class.id %>/new">Book in Member</a>
     </td>
+    <% else %>
+    <td>Class is Full</td>
+    <% end %>
   </tr>
   <% end %>
 </table>

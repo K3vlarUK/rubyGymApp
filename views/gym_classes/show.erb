@@ -4,7 +4,7 @@
 </form>
 <h2>Details for Class: <%= @gym_class.name %></h2>
 <p>Start Time: <%= @gym_class.start_time %></p>
-<p>Capacity: <%= @gym_class.capacity %></p>
+<p>Capacity: <%= @gym_class.members.length() %> / <%= @gym_class.capacity %></p>
 <table>
   <tr>
     <thead>
