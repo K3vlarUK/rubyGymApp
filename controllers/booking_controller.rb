@@ -4,10 +4,12 @@ require_relative('../models/booking.rb')
 require_relative('../models/gymclass.rb')
 require_relative('../models/member.rb')
 also_reload('../models/*')
+require('pry')
 
 get '/bookings/:id/new' do
   @gym_class = GymClass.find(params[:id])
   @members = Member.all()
+  # binding.pry
   erb (:"bookings/new")
 end
 
