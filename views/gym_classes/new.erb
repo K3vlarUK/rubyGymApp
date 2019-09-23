@@ -1,9 +1,9 @@
 <form action="/classes" method="post">
   <label for="name">Class Name: </label>
-  <input type="text" name="name" id="first-name">
+  <input type="text" name="name" id="first-name" required>
   <label for="start-time">Start Time: </label>
-  <input type="text" name="start_time" id="start-time">
+  <input type="time" name="start_time" id="start-time" min="07:00" max="22:00" step="3600" required>
   <label for="capacity">Class Capacity: </label>
-  <input type="number" name="capacity" id="capacity">
+  <input type="number" name="capacity" id="capacity" min="1" max="100" required>
   <input type="submit" value="Add Class">
 </form>
