@@ -10,7 +10,6 @@ class GymClass
     @name = options['name']
     @start_time = options['start_time']
     @capacity = options['capacity'].to_i
-    @attendees = 0
   end
 
   ## CRUD functionality
@@ -43,6 +42,14 @@ class GymClass
     members = SqlRunner.run(sql, values)
     result = members.map { |member| Member.new(member)}
     return result
+  end
+
+  def is_full?()
+    if members().length >= capacity
+      return true
+    else
+      return false
+    end
   end
 
   ## Class Methods

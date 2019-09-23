@@ -1,5 +1,6 @@
 <hr/>
 <a href="/classes/new">Add New Class</a>
+<a href="/bookings/new">Book Member to Class</a>
 <table>
   <thead>
     <h3>All Gym Classes</h3>
@@ -8,7 +9,6 @@
     <th>Class Name</th>
     <th>Start Time</th>
     <th>Capacity</th>
-    <th>Reserve</th>
     <th>Details</th>
   </tr>
   <% @gym_classes.each do |gym_class| %>
@@ -16,11 +16,6 @@
     <td><%= gym_class.name() %></td>
     <td><%= gym_class.start_time() %></td>
     <td><%= gym_class.members().length() %> / <%= gym_class.capacity() %></td>
-    <% if gym_class.members().length() < gym_class.capacity() %>
-    <td><a href="/bookings/new">Reserve</a></td>
-    <% else %>
-    <td>Class Full</td>
-    <% end %>
     <td><a href="/classes/<%= gym_class.id %>">Full Details</a></td>
   </tr>
   <% end %>
