@@ -1,8 +1,10 @@
-<h2>Details for member number <%= @member.id %></h2>
-<p> First Name: <%= @member.first_name %>  </p>
-<p> Last Name: <%= @member.last_name %>  </p>
-<p> Premium Membership Status: <%= @member.premium_member() %> </p>
-<a href="/members/<%= @member.id %>/edit">Update Member</a>
-<form action="/members/<%= @member.id %>/delete" method="post">
-  <input type="submit" value="Delete Member">
-</form>
+<div class="member-details">
+  <h2>Details for Member Number: <%= @member.id %></h2>
+  <p> First Name: <%= @member.first_name %>  </p>
+  <p> Last Name: <%= @member.last_name %>  </p>
+  <p> Premium Membership Status: <%= @member.premium_member() %> </p>
+  <a href="/members/<%= @member.id %>/edit">Update Member</a>
+  <form action="/members/<%= @member.id %>/delete" method="post">
+    <input type="submit" value="Delete Member">
+  </form>
+</div>

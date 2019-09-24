@@ -1,0 +1,27 @@
+.ruby-content table {
+  width: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.ruby-content h3 {
+  text-align: center;
+}
+
+.ruby-content th {
+  height: 50px;
+  text-align: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.ruby-content td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.full-class {
+  color: red;
+  text-decoration: line-through;
+}

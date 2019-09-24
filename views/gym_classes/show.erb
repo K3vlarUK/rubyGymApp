@@ -1,28 +1,32 @@
-<hr/>
-<form action="/classes/<%= @gym_class.id() %>/delete" method="post">
-  <input type="submit" value="Delete Class">
-</form>
-<h2>Details for Class: <%= @gym_class.name %></h2>
-<p>Start Time: <%= @gym_class.start_time %></p>
-<p>Capacity: <%= @gym_class.members.length() %> / <%= @gym_class.capacity %></p>
-<table>
-  <tr>
-    <thead>
-      <h3>Attending Members</h3>
-    </thead>
-  </tr>
-  <tr>
-    <th>Member</th>
-    <th>Cancel Booking</th>
-  </tr>
-  <% for member in @gym_class.members %>
-  <tr>
-    <td><%= member.merge_name() %></td>
-    <td>
-      <form action="/bookings/<%= member.id %>/<%= @gym_class.id %>/delete" method="post">
-        <input type="submit" value="Cancel Booking">
-      </form>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<div class="class-details">
+  <h2>Details for Class: <%= @gym_class.name %></h2>
+  <p>Start Time: <%= @gym_class.start_time %></p>
+  <p>Capacity: <%= @gym_class.members.length() %> / <%= @gym_class.capacity %></p>
+  <div class="delete-btn">
+
+    <form action="/classes/<%= @gym_class.id() %>/delete" method="post">
+      <input type="submit" value="Delete Class">
+    </form>
+  </div>
+  <table>
+    <tr>
+      <thead>
+        <h3>Attending Members</h3>
+      </thead>
+    </tr>
+    <tr>
+      <th>Member</th>
+      <th>Cancel Booking</th>
+    </tr>
+    <% for member in @gym_class.members %>
+    <tr>
+      <td><%= member.merge_name() %></td>
+      <td>
+        <form action="/bookings/<%= member.id %>/<%= @gym_class.id %>/delete" method="post">
+          <input type="submit" value="Cancel Booking">
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

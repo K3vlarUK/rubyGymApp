@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica;
+  margin: 0;
+  background-color: lightCyan;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  padding: 40px;
+  text-align: center;
+  background: aliceBlue;
+  color: teal;
+}
+
+.heading h1 {
+  margin-top: -40px;
+  font-size: 75px;
+}
+
+.heading p {
+  margin-top: -50px;
+  font-style: italic;
+}
+
+.ruby-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member-content {
+  flex: 87%;
+  padding: 0.5em;
+}
+
+.gym-classes {
+  flex: 87%;
+  padding: 0.5em;
+}
+
+.member-details {
+  flex-wrap: wrap;
+  border: 2px solid black;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.member-details h2 {
+  background-color: darkCyan;
+  flex: 100%;
+  padding: 0.5em;
+  margin: 0;
+}
+
+.class-details {
+  flex-wrap: wrap;
+  border: 2px solid black;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.class-details h2 {
+  background-color: darkCyan;
+  flex: 100%;
+  padding: 0.25em;
+  margin: 0;
+}
+
+.class-details h3 {
+  background-color: darkCyan;
+  flex: 100%;
+  padding: 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: -0.19em;
+}
+
+.new-member {
+  flex-wrap: wrap;
+  border: 2px solid black;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.creation-template {
+  flex-wrap: wrap;
+  border: 2px solid black;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.creation-template h2 {
+  background-color: darkCyan;
+  flex: 100%;
+  padding: 0.25em;
+  margin: 0;
+}
+
+.booked-member {
+  margin-top: 0.5em;
+}

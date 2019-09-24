@@ -1,26 +1,36 @@
-<h2>Book member into a class</h2>
-<form action="/bookings" method="post">
-  <label>Member to book in: </label>
-  <select name="member_id">
-    <% @members.each do |member| %>
-      <% in_class = false %>
-      <% for temp in @gym_class.members() %>
+<div class="creation-template">
+  <h2>Book member into a class</h2>
+  <form action="/bookings" method="post">
+    <div class="booked-member">
+      <label>Member to book in: </label>
+      <select name="member_id">
+        <% @members.each do |member| %>
+        <% in_class = false %>
+        <% for temp in @gym_class.members() %>
         <% if temp.id == member.id %>
-          <% in_class = true %>
+        <% in_class = true %>
         <% end %>
-      <% end %>
-      <% if in_class == false %>
+        <% end %>
+        <% if in_class == false %>
         <option value="<%= member.id %>">
           <%= member.merge_name() %>
         </option>
-      <% end %>
-    <% end %>
-  </select>
-  <label>Class to book into: </label>
-  <select name="gym_class_id">
-    <option value="<%= @gym_class.id %>">
-      <%= @gym_class.name %>
-    </option>
-  </select>
-  <input type="submit" value="Book Member">
-</form>
+        <% end %>
+        <% end %>
+      </select>
+    </div>
+    <br>
+    <div class="booked-class">
+      <label>Class to book into: </label>
+      <select name="gym_class_id">
+        <option value="<%= @gym_class.id %>">
+          <%= @gym_class.name %>
+        </option>
+      </select>
+    </div>
+    <br>
+    <div class="submit-btn">
+      <input type="submit" value="Book Member">
+    </div>
+  </form>
+</div>

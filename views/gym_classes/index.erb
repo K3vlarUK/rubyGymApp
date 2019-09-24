@@ -1,31 +1,34 @@
-<hr/>
-<a href="/classes/new">Add New Class</a>
-<table>
-  <thead>
-    <h3>All Gym Classes</h3>
-  </thead>
-  <tr>
-    <th>Class Name</th>
-    <th>Start Time</th>
-    <th>Capacity</th>
-    <th>Details</th>
-    <th>Book to Class</th>
-  </tr>
-  <% @gym_classes.each do |gym_class| %>
-  <tr>
-    <td><%= gym_class.name() %></td>
-    <td><%= gym_class.start_time() %></td>
-    <td><%= gym_class.members().length() %> / <%= gym_class.capacity() %></td>
-    <td>
-      <a href="/classes/<%= gym_class.id %>">Full Details</a>
-    </td>
-    <% if !gym_class.is_full?() %>
-    <td>
-      <a href="/bookings/<%= gym_class.id %>/new">Book in Member</a>
-    </td>
-    <% else %>
-    <td>Class is Full</td>
+<div class="add-class--btn">
+  <a href="/classes/new">Add New Class</a>
+</div>
+<div class="gym-classes">
+  <table>
+    <thead>
+      <h3>All Gym Classes</h3>
+    </thead>
+    <tr>
+      <th>Class Name</th>
+      <th>Start Time</th>
+      <th>Capacity</th>
+      <th>Details</th>
+      <th>Book to Class</th>
+    </tr>
+    <% @gym_classes.each do |gym_class| %>
+    <tr>
+      <td><%= gym_class.name() %></td>
+      <td><%= gym_class.start_time() %></td>
+      <td><%= gym_class.members().length() %> / <%= gym_class.capacity() %></td>
+      <td>
+        <a href="/classes/<%= gym_class.id %>">Full Details</a>
+      </td>
+      <% if !gym_class.is_full?() %>
+      <td>
+        <a href="/bookings/<%= gym_class.id %>/new">Book in Member</a>
+      </td>
+      <% else %>
+      <td class="full-class">Class is Full</td>
+      <% end %>
+    </tr>
     <% end %>
-  </tr>
-  <% end %>
-</table>
+  </table>
+</div>
