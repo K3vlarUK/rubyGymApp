@@ -24,4 +24,5 @@
 .full-class {
   color: red;
   text-decoration: line-through;
+  font-weight: bolder;
 }

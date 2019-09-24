@@ -2,7 +2,7 @@
   <h2>Details for Class: <%= @gym_class.name %></h2>
   <p>Start Time: <%= @gym_class.start_time %></p>
   <p>Capacity: <%= @gym_class.members.length() %> / <%= @gym_class.capacity %></p>
-  <div class="delete-btn">
+  <div class="member-content">
 
     <form action="/classes/<%= @gym_class.id() %>/delete" method="post">
       <input type="submit" value="Delete Class">
@@ -22,9 +22,11 @@
     <tr>
       <td><%= member.merge_name() %></td>
       <td>
-        <form action="/bookings/<%= member.id %>/<%= @gym_class.id %>/delete" method="post">
-          <input type="submit" value="Cancel Booking">
-        </form>
+        <div class="member-content">
+          <form action="/bookings/<%= member.id %>/<%= @gym_class.id %>/delete" method="post">
+            <input type="submit" value="Cancel Booking">
+          </form>
+        </div>
       </td>
     </tr>
     <% end %>

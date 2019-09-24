@@ -8,9 +8,14 @@ body {
   background-color: lightCyan;
 }
 
+
 .page-container {
   display: flex;
   flex-direction: column;
+}
+
+.home-content {
+  text-align: justify;
 }
 
 .heading {
