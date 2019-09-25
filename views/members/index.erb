@@ -13,12 +13,12 @@
       <th>View Member</th>
     </tr>
     <% @members.each do |member| %>
-    <tr>
-      <td><%= member.id %></td>
-      <td><%= member.merge_name() %></td>
-      <td><%= member.premium_member() %></td>
-      <td><a href="/members/<%= member.id %>">View</a></td>
-    </tr>
+      <tr>
+        <td><%= member.id %></td>
+        <td><%= member.merge_name() %></td>
+        <td><%= member.premium_member() %></td>
+        <td><a href="/members/<%= member.id %>">View</a></td>
+      </tr>
     <% end %>
   </table>
 </div>

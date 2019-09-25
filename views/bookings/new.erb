@@ -5,17 +5,17 @@
       <label>Member to book in: </label>
       <select name="member_id">
         <% @members.each do |member| %>
-        <% in_class = false %>
-        <% for temp in @gym_class.members() %>
-        <% if temp.id == member.id %>
-        <% in_class = true %>
-        <% end %>
-        <% end %>
-        <% if in_class == false %>
-        <option value="<%= member.id %>">
-          <%= member.merge_name() %>
-        </option>
-        <% end %>
+          <% in_class = false %>
+            <% for temp in @gym_class.members() %>
+              <% if temp.id == member.id %>
+                <% in_class = true %>
+              <% end %>
+            <% end %>
+            <% if in_class == false %>
+            <option value="<%= member.id %>">
+              <%= member.merge_name() %>
+            </option>
+            <% end %>
         <% end %>
       </select>
     </div>

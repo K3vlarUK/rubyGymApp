@@ -45,7 +45,7 @@ class GymClass
   end
 
   def is_full?()
-    if members().length >= capacity
+    if members().length >= @capacity
       return true
     else
       return false
