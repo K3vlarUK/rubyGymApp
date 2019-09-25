@@ -10,10 +10,10 @@ get '/bookings/:id/new' do
   @gym_class = GymClass.find(params[:id])
   @members = Member.all()
   # binding.pry
-  if !@gym_class.is_full?()
-    erb (:"bookings/new")
-  else
+  if @gym_class.is_full?()
     redirect to('/classes')
+  else
+    erb (:"bookings/new")
   end
 end
 
