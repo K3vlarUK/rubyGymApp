@@ -6,7 +6,7 @@
   <div class="member-content">
     <a href="/members/<%= @member.id %>/edit">Update Member</a>
     <form action="/members/<%= @member.id %>/delete" method="post">
-      <input type="submit" value="Delete Member">
+      <input type="submit" onclick="deleteAlert()" value="Delete Member">
     </form>
   </div>
 </div>

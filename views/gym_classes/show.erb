@@ -5,7 +5,7 @@
   <div class="member-content">
 
     <form action="/classes/<%= @gym_class.id() %>/delete" method="post">
-      <input type="submit" value="Delete Class">
+      <input type="submit" onclick="deleteAlert()" value="Delete Class">
     </form>
   </div>
   <table>
@@ -24,7 +24,7 @@
       <td>
         <div class="member-content">
           <form action="/bookings/<%= member.id %>/<%= @gym_class.id %>/delete" method="post">
-            <input type="submit" value="Cancel Booking">
+            <input type="submit" onclick="deleteConfig()" value="Cancel Booking">
           </form>
         </div>
       </td>
