@@ -45,9 +45,12 @@ class GymClass
   end
 
   def is_full?()
+    # Check if the length of the array created in the members method is the same or more than the gym class capacity
     if members().length >= @capacity
+    # If is this then tell the program gym class is full.
       return true
     else
+    # Otherwise tell the program there is still space in the gym class.
       return false
     end
   end

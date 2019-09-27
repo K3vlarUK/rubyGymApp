@@ -101,3 +101,26 @@
 .member-content input[type=submit] {
   margin-top: 1em;
 }
+
+.back-btn {
+  flex: 13%;
+  padding: 15px;
+}
+
+.back-btn {
+  flex: 13%;
+  padding: 15px;
+}
+
+.back-btn a {
+  color: steelBlue;
+  padding: 12px 18px;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid darkCyan;
+}
+
+.back-btn a:hover {
+  background-color: steelBlue;
+  color: aliceBlue;
+}

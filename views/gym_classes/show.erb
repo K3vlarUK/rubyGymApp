@@ -1,3 +1,6 @@
+<div class="back-btn">
+  <a href="/classes">Return</a>
+</div>
 <div class="class-details">
   <h2>Details for Class: <%= @gym_class.name %></h2>
   <p>Start Time: <%= @gym_class.start_time %></p>
@@ -24,7 +27,7 @@
       <td>
         <div class="member-content">
           <form action="/bookings/<%= member.id %>/<%= @gym_class.id %>/delete" method="post">
-            <input type="submit" onclick="deleteConfig()" value="Cancel Booking">
+            <input type="submit" onclick="cancelledAlert()" value="Cancel Booking">
           </form>
         </div>
       </td>

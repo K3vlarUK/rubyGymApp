@@ -44,18 +44,22 @@ body {
 .member-content {
   flex: 87%;
   padding: 0.5em;
+  margin-right: 0.01em;
 }
 
 .gym-classes {
   flex: 87%;
   padding: 0.5em;
+  margin-right: 0.01em;
 }
 
 .member-details {
+  flex: 87%;
   flex-wrap: wrap;
   border: 2px solid black;
   text-align: center;
   margin-top: 0.5em;
+  margin-right: 0.01em;
 }
 
 .member-details h2 {
@@ -66,10 +70,12 @@ body {
 }
 
 .class-details {
+  flex: 87%;
   flex-wrap: wrap;
   border: 2px solid black;
   text-align: center;
   margin-top: 0.5em;
+  margin-right: 0.01em;
 }
 
 .class-details h2 {
